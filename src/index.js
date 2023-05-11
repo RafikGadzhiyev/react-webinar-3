@@ -9,7 +9,7 @@ const store = new Store({
     {code: GenerateId(), title: 'Название элемента', clicked: 0},
     {code: GenerateId(), title: 'Некий объект', clicked: 0},
     {code: GenerateId(), title: 'Заголовок', clicked: 0},
-    {code: GenerateId(), title: 'Очень длинное название элемента из семи слов'},
+    {code: GenerateId(), title: 'Очень длинное название элемента из семи слов', clicked: 0},
     {code: GenerateId(), title: 'Запись', clicked: 0},
     {code: GenerateId(), title: 'Шестая запись', clicked: 0},
     {code: GenerateId(), title: 'Седьмая запись', clicked: 0},
