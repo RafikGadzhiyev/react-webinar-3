@@ -46,7 +46,7 @@ class Store {
   addItem() {
     this.setState({
       ...this.state,
-      list: [...this.state.list, {code: GenerateId(), title: 'Новая запись', clicked: 0}]
+      list: [...this.state.list, {code: GenerateId(), title: 'Новая запись', selectionTotal: 0}]
     })
   };
 
