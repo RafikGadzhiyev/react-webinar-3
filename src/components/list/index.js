@@ -21,7 +21,8 @@ function List({list, onDeleteItem, onSelectItem, setBasket, isModalOpen, basket}
             [item.code]: {
               ...data
             },
-            itemPrice: (prev.itemPrice || 0) + data.price
+            itemPrice: (prev.itemPrice || 0) + data.price,
+            itemsTotal: (prev.itemsTotal || 0) + 1
           })
         })
     }, []),
