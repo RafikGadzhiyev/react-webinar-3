@@ -48,7 +48,7 @@ function App({store}) {
               В корзине: <b>
               {
                   basket.itemsTotal ?
-              basket.itemsTotal + ' ' + plural(basket.itemsTotal, {one: 'товар', few: 'товара', many: 'товаров', other: 'товара'}, 'ru-RU') + ' / ' + getCurrency(basket.itemPrice, 'ru-Ru', 'RUB') :
+              Object.keys(basket).length - 2 + ' ' + plural(Object.keys(basket).length - 2, {one: 'товар', few: 'товара', many: 'товаров', other: 'товара'}, 'ru-RU') + ' / ' + getCurrency(basket.itemPrice, 'ru-Ru', 'RUB') :
                       'Пусто'
               }
           </b>
@@ -64,9 +64,11 @@ function App({store}) {
             <Head title="Корзина">
               <button onClick={callbacks.onToggleModal} >Закрыть</button>
             </Head>
+              <div className='Modal-content'>
             {
-              !!basket.itemPrice ? <List list = {Object.keys(basket)} setBasket={setBasket} isModalOpen={isOpened} basket={basket}/>: <div className='Modal-empty'>Здесь пусто</div>
+              (!!basket.itemsTotal) ? <List list = {Object.keys(basket)} setBasket={setBasket} isModalOpen={isOpened} basket={basket}/>: <div className='Modal-empty'>Здесь пусто</div>
             }
+              </div>
 
           </Modal>
 

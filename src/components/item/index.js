@@ -27,4 +27,8 @@ Item.propTypes = {
   setBasket: PropTypes.func
 };
 
+
+Item.defaultProps = {
+    setBasket: () => {}
+}
 export default React.memo(Item);

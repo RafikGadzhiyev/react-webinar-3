@@ -28,9 +28,10 @@ function List({list, onDeleteItem, onSelectItem, setBasket, isModalOpen, basket}
     }, []),
     onDeleteFromBasket: useCallback((code) => {
       setBasket((prev) => {
-        let currentPrice = prev.itemPrice - (prev[code].total * prev[code].price);
+        let currentPrice = prev.itemPrice - (prev[code].total * prev[code].price),
+            currentTotal = prev.itemsTotal - prev[code].total;
         delete prev[code];
-        return {...prev, itemPrice: currentPrice}
+        return {...prev, itemPrice: currentPrice, itemsTotal: currentTotal}
       })
     }, [])
   }
@@ -75,6 +76,9 @@ List.propTypes = {
 };
 
 List.defaultProps = {
+  isModalOpen: false,
+  basket: {},
+  setBasket: () => {}
 }
 
 export default React.memo(List);

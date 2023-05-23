@@ -5,7 +5,6 @@
   transition: background-color 1s;
   padding: 0px 10px 0 20px;
   gap :5px;
-  border-bottom: 1px dotted rgb(0 0 0 / .3);
 }
 
 .Item_selected {

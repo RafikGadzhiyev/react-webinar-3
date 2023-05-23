@@ -15,7 +15,12 @@ function Modal({isOpened,children, setIsOpened}){
 
 Modal.propTypes = {
     isOpened: PropTypes.bool,
-    setIsOpened: PropTypes.func
+    setIsOpened: PropTypes.func,
+}
+
+Modal.defaultProps = {
+    isOpened: false,
+    setIsOpened: () => {}
 }
 
 
